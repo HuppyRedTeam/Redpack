@@ -1,0 +1,6 @@
+bin/com/Little_Snow_/Redpack/Hb$1.class
+*.class
+.settings/org.eclipse.core.resources.prefs
+*.prefs
+*.project
+.classpath
