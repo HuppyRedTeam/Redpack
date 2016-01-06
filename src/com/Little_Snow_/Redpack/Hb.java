@@ -260,22 +260,26 @@ public class Hb implements CommandExecutor, Listener{
 		YamlConfiguration log = ser.getLog();
 		File logf = ser.getFile();
 		Economy eco = ser.getEconomy();
+	    int r = Integer.parseInt(log.getString("keyredpack.receive"));
+	    int r2 = Integer.parseInt(log.getString("keyredpack.part"));
 		try{
 			log.load(logf);
 			if(a.equalsIgnoreCase(log.getString("keyredpack.key"))){
 				if(log.getString("keyredpack.player."+p.getName())==null){
+					if((r2-r)!=0){
 				    int receive = Integer.parseInt(log.getString("keyredpack.receive"))+1;
 				    log.set("keyredpack.receive",receive);
 				    log.set("keyredpack.player"+"."+p.getName(),p.getName());
 				    eco.depositPlayer(p,log.getDouble("keyredpack.unit"));
 				    p.sendMessage("§6[§c红包§6]§c你已获得来自"+log.getString("keyredpack.sender")+"的红包："+log.getDouble("keyredpack.unit")+"元");
-				    int r = Integer.parseInt(log.getString("keyredpack.receive"));
-				    int r2 = Integer.parseInt(log.getString("keyredpack.part"));
 				    String sender = log.getString("keyredpack.sender");
 				    for(Player play : ser.getServer().getOnlinePlayers()){
 				    	play.sendMessage("§6[§c红包§6]"+"§e§l"+p.getName()+"§a领取了1份来自:§c"+sender+"§a的红包，此红包还剩:§e§l"+(r2-r)+"§c份");
 				    }
 				    log.save(logf);
+					}else{
+						p.sendMessage("§6[§c红包§6]§c该红包已领取完毕");
+					}
 				}else{
 					p.sendMessage("§6[§c红包§6]§c你已领取过该红包，本次聊天已撤回");
 					event.setMessage("");
