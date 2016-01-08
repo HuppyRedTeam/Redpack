@@ -102,7 +102,7 @@ public class Hb implements CommandExecutor, Listener{
 							    int r = Integer.parseInt(log.getString(args[1]+".receive"));
 							    int r2 = Integer.parseInt(log.getString(args[1]+".part"));
 							    for(Player play : ser.getServer().getOnlinePlayers()){
-							    	play.sendMessage("§6[§c红包§6]"+"§e§l"+p.getName()+"§a领取了1份来自:§c"+sender+"§a的红包，此红包还剩:§e§l"+(r2-r)+"§c份");
+							    	play.sendMessage("§6[§c红包§6]"+"§e§l"+p.getName()+"§a领取了1份来自:§c"+args[1]+"§a的红包，此红包还剩:§e§l"+(r2-r)+"§c份");
 							    }
 							    return true;
 					    }catch(Exception e){
