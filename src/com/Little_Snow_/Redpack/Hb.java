@@ -22,26 +22,6 @@ public class Hb implements CommandExecutor, Listener{
     public Hb(Main main) {
         this.ser = main;
     }
-    public void time(){
-    	
-    	t.schedule(new TimerTask(){
-			YamlConfiguration log = ser.getLog();
-			File logf = ser.getFile();
-			@Override
-			public void run() {
-				try{
-					log.load(logf);
-					log.set("keyredpack.receive", log.getInt("keyredpack.part"));
-					log.save(logf);
-				}catch(Exception e){
-				    for(Player play : ser.getServer().getOnlinePlayers()){
-				    	play.sendMessage("§6[§c红包§6]§c因上一次口令红包超过10分钟未领取完毕，现已重置口令红包状态");
-				    }
-				}
-			}
-    		
-    	},10*60*1000L,10*60*1000L);
-    }
 	public boolean onCommand(CommandSender sender,Command cmd,String Label,String[] args) {
 		if(cmd.getName().equalsIgnoreCase("hb")){
 			Economy eco = ser.getEconomy();
