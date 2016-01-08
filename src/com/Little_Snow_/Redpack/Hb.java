@@ -245,7 +245,7 @@ public class Hb implements CommandExecutor, Listener{
 			log.load(logf);
 			if(a.equalsIgnoreCase(log.getString("keyredpack.key"))){
 				if(log.getString("keyredpack.player."+p.getName())==null){
-					if((r2-r)!=0){
+					if((r2-r)>=0){
 				    int receive = Integer.parseInt(log.getString("keyredpack.receive"))+1;
 				    log.set("keyredpack.receive",receive);
 				    log.set("keyredpack.player"+"."+p.getName(),p.getName());
@@ -253,7 +253,7 @@ public class Hb implements CommandExecutor, Listener{
 				    p.sendMessage("§6[§c红包§6]§c你已获得来自"+log.getString("keyredpack.sender")+"的红包："+log.getDouble("keyredpack.unit")+"元");
 				    String sender = log.getString("keyredpack.sender");
 				    for(Player play : ser.getServer().getOnlinePlayers()){
-				    	play.sendMessage("§6[§c红包§6]"+"§e§l"+p.getName()+"§a领取了1份来自:§c"+sender+"§a的红包，此红包还剩:§e§l"+(r2-r-1)+"§c份");
+				    	play.sendMessage("§6[§c红包§6]"+"§e§l"+p.getName()+"§a领取了1份来自:§c"+sender+"§a的红包，此红包还剩:§e§l"+(r2-r)+"§c份");
 				    }
 				    log.save(logf);
 					}else{
