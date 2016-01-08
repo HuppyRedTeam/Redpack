@@ -35,9 +35,7 @@ public class Redpack implements CommandExecutor{
 					log.load(logf);
 					log.set("keyredpack.receive", log.getInt("keyredpack.part"));
 					log.save(logf);
-				    for(Player play : ser.getServer().getOnlinePlayers()){
-				    	play.sendMessage("§6[§c红包§6]§c已重置口令红包状态");
-				    }
+					ser.getServer().broadcastMessage("§6[§c红包§6]§a上一个口令红包已清除！");
 				    return true;
 				}catch(Exception e){
 				return true;
