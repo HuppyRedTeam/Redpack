@@ -260,8 +260,8 @@ public class Hb implements CommandExecutor, Listener{
 		YamlConfiguration log = ser.getLog();
 		File logf = ser.getFile();
 		Economy eco = ser.getEconomy();
-	    int r = Integer.parseInt(log.getString("keyredpack.receive"));
-	    int r2 = Integer.parseInt(log.getString("keyredpack.part"));
+	    int r = log.getInt("keyredpack.receive");
+	    int r2 = log.getInt("keyredpack.part");
 		try{
 			log.load(logf);
 			if(a.equalsIgnoreCase(log.getString("keyredpack.key"))){
