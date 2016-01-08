@@ -190,7 +190,6 @@ public class Hb implements CommandExecutor, Listener{
 														pl.sendMessage("§6[§c红包§6]§a玩家§e" + p.getName() + "§a发送了一个总价值为:§c" + a + "§a，份数为:§c" + b + "§a的§d§l口令红包。");
 									                    pl.sendMessage("§6[§c红包§6]§a口令为：§e" + key + "，§a发送口令来获得红包");
 													}
-													time();
 													return true;
 												}else{
 													p.sendMessage("§6[§c红包§6]§c当前有口令红包正在发送，请等待上一个红包领取完毕");
