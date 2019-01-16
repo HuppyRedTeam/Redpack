@@ -266,9 +266,6 @@ public class Hb implements CommandExecutor, Listener{
 					}else{
 						p.sendMessage("§6[§c红包§6]§c该红包已领取完毕");
 					}
-				}else{
-					p.sendMessage("§6[§c红包§6]§c你已领取过该红包，本次聊天已撤回");
-					event.setMessage("");
 				}
 			}
 		}catch(Exception e){
