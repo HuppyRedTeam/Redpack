@@ -1,23 +1,22 @@
 name: Redpack
+version: 1.0
+authors: [chenhao]
 main: com.Little_Snow_.Redpack.Main
-version: 1.1
-author: Little_Snow_
 softdepend: [Vault]
-commands: 
+
+commands:
   redpack:
-    description: redpack main commands
-    usage: /<command>
-    permission: redpack.main
-    permission-message: §c你需要redpack.main权限来执行此命令
+    description: Displays information about redpack
+    usage: |
+           /<command> - Displays Vault information
   hb:
-    description: redpack main commands
-    usage: /<command>
-    permission: redpack.use
-    permission-message: §c你需要redpack.use权限来执行此命令
-permissions: 
-  redpack.main: 
-    description: 允许使用/redpack
-    default: true
+    description: use redpack
+    usage: |
+           /<command> [economy1] [economy2]
+permissions:
+  redpack.main:
+    description: Notifies the player when vault is in need of an update.
+    default: op
   redpack.use:
-    description: 允许使用/hb
+    description: Notifies the player when vault is in need of an update.
     default: true

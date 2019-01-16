@@ -40,14 +40,16 @@ public final class Main extends JavaPlugin{
     public void onDisable(){
 	   this.getLogger().info("红包插件已卸载");
     }
-    private boolean setupEconomy()
-    {
-        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
-        if (economyProvider != null) {
-            eco = economyProvider.getProvider();
+    private boolean setupEconomy() {
+        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+            return false;
         }
-
-        return (eco != null);
+        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        if (rsp == null) {
+            return false;
+        }
+        eco = rsp.getProvider();
+        return eco != null;
     }
     public Economy getEconomy(){
     	return this.eco;

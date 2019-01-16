@@ -1,6 +1,7 @@
 package com.Little_Snow_.Redpack;
 
 import java.io.File;
+import java.util.Collection;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.logging.Level;
@@ -103,7 +104,9 @@ public class Hb implements CommandExecutor, Listener{
 						return true;
 					}
 					Player p = (Player)sender;
-					Player[] all = ser.getServer().getOnlinePlayers();
+					Collection<? extends Player> allc = ser.getServer().getOnlinePlayers();
+					Player[] all = new Player[allc.size()];
+					all =  allc.toArray(all);
 					int total = all.length;
 					double a= Double.parseDouble(args[1]);
 					int b = Integer.parseInt(args[2]);
@@ -164,7 +167,9 @@ public class Hb implements CommandExecutor, Listener{
 						try{
 							log.load(logf);
 							Player p = (Player)sender;
-							Player[] all = ser.getServer().getOnlinePlayers();
+							Collection<? extends Player> allc = ser.getServer().getOnlinePlayers();
+							Player[] all = new Player[allc.size()];
+							all = allc.toArray(all);
 							int total = all.length;
 							double a= Double.parseDouble(args[1]);
 							int b = Integer.parseInt(args[2]);

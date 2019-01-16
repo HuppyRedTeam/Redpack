@@ -45,7 +45,7 @@ public class Redpack implements CommandExecutor{
 			}
 			if(args.length==0){
 			sender.sendMessage("§6[§cRedpack§6]§bVersion:"+ser.getConfig().getString("version"));
-			sender.sendMessage("§6[§cRedpack§6]§b作者:Little_Snow_");
+			sender.sendMessage("§6[§cRedpack§6]§b作者:chenhao220");
 			sender.sendMessage("§6[§cRedpack§6]§b若有更好建议或发现BUG请联系作者");
 			sender.sendMessage("§6[§cRedpack§6]§b请输入/redpack help获得帮助");
 			return true;
